@@ -1,4 +1,4 @@
-enum OpenType {
+export enum OperType {
   ADD,
   EDIT
 }

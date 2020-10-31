@@ -1,1 +1,14 @@
-<p>priorities works!</p>
+<div class="vertical-middle priorities" *ngFor="let priority of priorities; let index = index">
+  <div class="row align-self-baseline">
+    <div class="col-7">
+      <a class="pointer" (click)="onEditPriority(priority)">{{ priority.title }}</a>
+    </div>
+    <div class="col-2 text-right">
+      <span [(colorPicker)]="priority.color" [style.background]="priority.color" class="color-circle"></span>
+    </div>
+    <div class="col-1 text-left"><p class="pointer gray"><mat-icon (click)="delete(priority)">delete</mat-icon></p></div>
+    <div class="col-1 text-left"><p class="pointer gray"><mat-icon (click)="onEditPriority(priority)">edit</mat-icon></p></div>
+  </div>
+</div>
+
+<p class="link little" (click)="onAddPriority()">Добавить приоритет</p>
